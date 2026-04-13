@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Productivity Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="logo">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h1>Student Dashboard</h1>
+            </div>
+            <div class="header-controls">
+                <div class="clock" id="clock">00:00:00</div>
+                <div class="date" id="date">Jan 1, 2026</div>
+                <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Main Content Grid -->
+        <main class="dashboard-grid">
+            
+            <!-- Left Column -->
+            <div class="col left-col">
+                <!-- Progress Tracker -->
+                <section class="card progress-tracker">
+                    <h2><i class="fa-solid fa-chart-line"></i> Daily Progress</h2>
+                    <div class="progress-stats">
+                        <span id="tasks-completed-count">0</span> / <span id="tasks-total-count">0</span> completed
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <div class="progress-percentage"><span id="progress-percentage-text">0</span>%</div>
+                </section>
+
+                <!-- To-Do List -->
+                <section class="card todo-section">
+                    <div class="card-header">
+                        <h2><i class="fa-solid fa-list-check"></i> Tasks</h2>
+                        <button id="clear-tasks-btn" class="text-btn danger"><i class="fa-solid fa-trash-can"></i> Clear All</button>
+                    </div>
+                    <div class="todo-input-group">
+                        <input type="text" id="todo-input" placeholder="What needs to be done?">
+                        <button id="add-todo-btn" class="primary-btn"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                    <ul id="todo-list" class="todo-list">
+                        <!-- Tasks go here -->
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="col right-col">
+                <!-- Pomodoro Timer -->
+                <section class="card pomodoro-section">
+                    <h2><i class="fa-solid fa-stopwatch"></i> Pomodoro Timer</h2>
+                    <div class="timer-display">
+                        <span id="minutes">25</span>:<span id="seconds">00</span>
+                    </div>
+                    <div class="timer-modes">
+                        <button id="work-mode-btn" class="mode-btn active">Work (25m)</button>
+                        <button id="break-mode-btn" class="mode-btn">Break (5m)</button>
+                    </div>
+                    <div class="timer-controls">
+                        <button id="start-timer-btn" class="primary-btn"><i class="fa-solid fa-play"></i> Start</button>
+                        <button id="pause-timer-btn" class="secondary-btn"><i class="fa-solid fa-pause"></i> Pause</button>
+                        <button id="reset-timer-btn" class="secondary-btn"><i class="fa-solid fa-rotate-right"></i> Reset</button>
+                    </div>
+                </section>
+
+                <!-- Notes Section -->
+                <section class="card notes-section">
+                    <h2><i class="fa-solid fa-pen-to-square"></i> Quick Notes</h2>
+                    <textarea id="notes-area" placeholder="Write your notes here..."></textarea>
+                    <div class="notes-footer">
+                        <span id="notes-status">Saved automatically</span>
+                    </div>
+                </section>
+
+                <!-- Motivational Quotes -->
+                <section class="card quotes-section">
+                    <h2><i class="fa-solid fa-quote-left"></i> Daily Motivation</h2>
+                    <blockquote id="quote-text">"Patience is a key element of success."</blockquote>
+                    <cite id="quote-author">- Bill Gates</cite>
+                </section>
+            </div>
+            
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
